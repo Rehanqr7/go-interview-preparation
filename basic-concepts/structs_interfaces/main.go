@@ -297,6 +297,17 @@ func main() {
 	}
 	fmt.Println(book) // fmt.Println uses the String() method
 
+	// Error handling example
+	fmt.Println("\nError handling example:")
+	if err := validateNameInput(""); err != nil {
+		fmt.Println("Error:", err)
+	}
+	if err := validateNameInput("John"); err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Name validation successful")
+	}
+
 	// nil interface values
 	fmt.Println("\nNil interface values:")
 	var s1 Shape

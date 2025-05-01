@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -93,6 +94,32 @@ func main() {
 	fmt.Println("Full name:", p.fullName())
 	p.increaseAge(5)
 	fmt.Println("New age:", p.age)
+
+	// Function with callbacks
+	fmt.Println("\n--- Function with Callbacks ---")
+	inputStrings := []string{"hello", "world", "go", "programming"}
+
+	// Example 1: Convert to uppercase
+	uppercaseStrings := processStrings(inputStrings, func(s string) string {
+		return strings.ToUpper(s)
+	})
+	fmt.Println("Uppercase strings:", uppercaseStrings)
+
+	// Example 2: Add prefix
+	prefixedStrings := processStrings(inputStrings, func(s string) string {
+		return "prefix_" + s
+	})
+	fmt.Println("Prefixed strings:", prefixedStrings)
+
+	// Example 3: Reverse strings
+	reversedStrings := processStrings(inputStrings, func(s string) string {
+		runes := []rune(s)
+		for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+			runes[i], runes[j] = runes[j], runes[i]
+		}
+		return string(runes)
+	})
+	fmt.Println("Reversed strings:", reversedStrings)
 }
 
 // Basic function
