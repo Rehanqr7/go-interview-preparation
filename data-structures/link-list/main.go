@@ -20,7 +20,7 @@ func main() {
 	s.push(29)
 
 	for !s.isEmpty() {
-		fmt.Println(s.top.val)
+		fmt.Print(s.top.val)
 		s.pop()
 	}
 

@@ -351,6 +351,7 @@ func worker(id int, jobs <-chan int, results chan<- int) {
 		time.Sleep(time.Duration(rand.Intn(100)) * time.Millisecond)
 		results <- job * 2 // Simulate some processing
 	}
+
 }
 
 // FanOutFanIn demonstrates the fan-out/fan-in pattern
@@ -374,8 +375,8 @@ func FanOutFanIn() {
 	c3 := fanOut(input)
 
 	// Fan in the results
-	for result := range fanIn(c1, c2, c3) {
-		fmt.Printf("Result: %d\n", result)
+	for results := range fanIn(c1, c2, c3) {
+		fmt.Printf("Result: %d\n", results)
 	}
 	fmt.Println()
 }
