@@ -65,7 +65,3 @@ go run main.go
 ## Contributing
 
 Feel free to contribute additional examples, explanations, or interview questions by submitting a pull request.
-
-## License
-
-MIT 
